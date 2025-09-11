@@ -1,9 +1,23 @@
 import React from 'react'
+import { contrastColor } from 'contrast-color'
 
-const swatch = () => {
+const Swatch = ({ label, color, children }) => {
+  if (!color) return null
+
   return (
-    <div>swatch</div>
+    <div
+      className="swatch"
+      aria-label={label}
+      style={{
+        '--swatchColor': color?.hex,
+        '--swatchBorder': color?.hex
+          ? contrastColor({ bgColor: color?.hex })
+          : null,
+      }}
+    >
+      {children}
+    </div>
   )
 }
 
-export default swatch
+export default Swatch
