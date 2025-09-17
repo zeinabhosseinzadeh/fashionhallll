@@ -6,7 +6,7 @@ import Menu from "@components/menu";
 import Icon from "@components/icon";
 
 const Footer = ({ data = {} }) => {
-  const { blocks } = data;
+  const { blocks } = data
 
   return (
     <footer className="footer" role="contentinfo">
@@ -14,11 +14,11 @@ const Footer = ({ data = {} }) => {
         {blocks.map((block, key) => (
           <div key={key} className="footer--block">
             {block.title && <p className="is-h3">{block.title}</p>}
-
+            
             {block.menu?.items && (
               <Menu items={block.menu.items} className="menu-footer" />
             )}
-
+            
             {block.newsletter && <Newsletter data={block.newsletter} />}
 
             {block.social && (
@@ -33,7 +33,7 @@ const Footer = ({ data = {} }) => {
                     >
                       <Icon name={link.icon} />
                     </a>
-                  );
+                  )
                 })}
               </div>
             )}
@@ -52,7 +52,7 @@ const Footer = ({ data = {} }) => {
         ))}
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
